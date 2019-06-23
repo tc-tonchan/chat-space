@@ -1,14 +1,30 @@
-.Header
-  .Header__log
-    グループを作成しました
-
 .Wrapper
-  .Chat-side
-    = render 'messages/side-header'
-    = render 'messages/groups'
+  
+  = render 'shared/side-header'
       
 
-  .Chat-main
-    = render 'messages/main-headers'
-    = render 'messages/chat-messages'
-    = render 'messages/chat-forms'
+  .Chat
+    .Header
+      .Left-header
+        .Left-header__title
+          (^ ^)
+        .Left-header__members
+          Member：
+          .Member
+            K
+      
+      .Right-header
+        .Rigt-header__button
+          Edit
+    
+    .Messages
+      = render @messages
+
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
