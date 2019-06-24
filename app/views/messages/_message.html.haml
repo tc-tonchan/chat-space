@@ -1,0 +1,11 @@
+.Message
+  .Upper-message
+    .Upper-message__user-name
+      = message.user.name
+    .Upper-message__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .Lower-message
+    - if message.content.present?
+      .Lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'Lower-message__image' if message.image.present?
