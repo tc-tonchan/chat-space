@@ -57,10 +57,9 @@ $alert_orange: #F35500;
       background-color: #2f3e51;
       padding: 20px 20px 0;
       height: calc(100vh - 100px);
-      
+      box-sizing: border-box;
+      overflow: auto;      
       .Group {
-        box-sizing: border-box;
-
         &__member {
           color: $baseColor;
           font-size: 15px;
@@ -124,6 +123,7 @@ $alert_orange: #F35500;
       box-sizing: border-box;
       padding: 46px 40px 0;
       height: calc(100% - 100px - 90px);
+      overflow: auto;
       .Message {
         .Upper-message {
           display: flex;
@@ -149,7 +149,7 @@ $alert_orange: #F35500;
       }
     }
 
-    .Form {
+    .form {
       background-color: #DDDDDD;
       box-sizing: border-box;
       height: 90px;
@@ -160,7 +160,7 @@ $alert_orange: #F35500;
         height: 50px;
         width: calc(100% - 150px);
       }
-        .Form__mask {
+        .form__mask {
           background-color: $white;
           float: left;
           height: 50px;
@@ -169,7 +169,7 @@ $alert_orange: #F35500;
             font-size: 20px;
             line-height: 50px;
           }
-          .Hidden {
+          .hidden {
             display: none;
           }
         }
