@@ -1,13 +1,13 @@
 .notification {
   .notice {
-    background-color: $light_blue;
-    color: $white;
+    background-color: #38AEF0;
+    color: #fff;
     text-align: center;
   }
 
   .alert {
-    background-color: $alert_orange;
-    color: $white;
+    background-color: #f35500;
+    color: #fff;
     text-align: center;
   }
 }
