@@ -7,11 +7,12 @@
     .Header
       .Left-header
         .Left-header__title
-          (^ ^)
+          = @group.name
         .Left-header__members
           Member：
           .Member
-            K
+            - @group.users.each do |user|
+              = user.name
       
       .Right-header
         .Rigt-header__button
