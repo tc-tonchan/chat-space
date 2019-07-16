@@ -1,26 +1,45 @@
 # README
 
 ## membersテーブル
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 |Column|Type|Options|
 |------|----|-------|
 |user_id|reference|null: false, foreign_key: true|
 |group_id|reference|null: false, foreign_key: true|
-Things you may want to cover:
 
 ### Association
 - belongs_to :group
 - belongs_to :user
-* Ruby version
 
 ## usersテーブル
-* System dependencies
-
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null:false| 
 |email|string|null: fales, unique: true |
 |password|string|null: fales, unique: true|
-* Configuration
+
+### Association
+- has_many :messages
+- has_many :group_users
+- has_many :groups, through: :members
+
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|group|string|null: false|
+
+### Association
+- has_many :messages
+- has_many :group_users
+- has_many :users, through: :group_users
+
+## messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|body|text|
+|image|string|
+|group_id|references|null: false, foreign_key: true:|
+|user_id|references|nill: false, foreign_key: true:|
+
+### Association
+- belongs_to :group
+- belongs_to :user
