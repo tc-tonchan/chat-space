@@ -1,7 +1,13 @@
+-# %html
+-#   %head
+-#     %meta(charset="UTF-8")
+-#   %body
+
+
 .Wrapper
-  
+    
   = render 'shared/side-header'
-      
+        
 
   .Chat
     .Header
@@ -22,7 +28,7 @@
       = render @messages
 
     .form
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message], id: 'new_message' do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .form__mask
           = f.label :image, class: 'form__mask__image' do
