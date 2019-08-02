@@ -168,6 +168,7 @@ $alert_orange: #F35500;
           &__image {
             font-size: 20px;
             line-height: 50px;
+            object-fit:contain;
           }
           .hidden {
             display: none;
